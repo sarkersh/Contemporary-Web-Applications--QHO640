@@ -1,0 +1,65 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --color-purple: #9F119F;
+    --color-blue: #224FC8;
+    --color-orange: #e7a22a;
+}
+
+/*body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}*/
+
+body {
+
+  font-family: "jost", "inter", "roboto", "helvetica", "sans-serif"!important;
+    font-size: 15px;
+;
+
+}
+
+.search-icon{
+    height: 2.35rem;
+    margin-left: -4px!important;
+    margin-top: .15rem;
+}
+
+
+.btn {
+  @apply text-base font-medium rounded-lg p-3;
+}
+
+.btn--primary {
+  @apply bg-sky-500 text-white;
+}
+
+.btn--secondary {
+  @apply bg-slate-100 text-slate-900;
+}
+
+.deal_of_the_day {
+  letter-spacing: -1.28px;
+}
+
+:where(.css-dev-only-do-not-override-pr0fja).ant-layout .ant-layout-sider {
+    position: relative;
+    min-width: 0;
+    background: #001529;
+    transition: all 0.2s,background 0s;
+}
+
+/*
+
+=========================================
+*/
+
+
