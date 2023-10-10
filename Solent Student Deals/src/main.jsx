@@ -16,16 +16,19 @@ import {
 
 import './App.css'
 
+
 import {
     Root,
     Index,
     Deals,
     dealsLoader,
-    //rootLoader,
     ErrorPage,
     ProductDetails,
-    Login
+    Login,
+    Register,
+    Dashboard
 } from "./routes/index.jsx";
+
 
 const router = createBrowserRouter([
     {
@@ -52,6 +55,14 @@ const router = createBrowserRouter([
                 path: "login",
                 element: <Login />,
             },
+            {
+                path: "Register",
+                element: <Register />,
+            },
+            {
+                path: "dashboard",
+                element: <Dashboard />,
+            }
         ],
 
     }

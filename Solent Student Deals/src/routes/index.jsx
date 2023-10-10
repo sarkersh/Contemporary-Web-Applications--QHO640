@@ -14,7 +14,6 @@ import Home from "./home/Home";
 import HomeBottom from "./home/HomeBottom.jsx";
 import HeroSection from "./home/HeroSection.jsx";
 import Nav from "../components/Nav.jsx";
-import FeaturedCategories from "./category/FeaturedCategories.jsx";
 import FeaturedCategoriesV1 from "./category/FeaturedCategoriesV1.jsx";
 
 import DealItemV1 from "./deals/DealItemV1.jsx";
@@ -22,9 +21,12 @@ import ProductDetails from "./deals/ProductDetails.jsx";
 import DealGrid from "./deals/DealGrid.jsx";
 import ProductInfoItem from "./deals/ProductInfoItem.jsx";
 import Login from "./auth/Login.jsx";
+import Register from "./auth/Register.jsx";
 
 
 import { dealsLoader} from "./deals/DealItemList.jsx";
+import Dashboard from "./dashboard/Dashboard.jsx";
+import Notifications from "./dashboard/Notifications.jsx";
 
 
 
@@ -32,7 +34,6 @@ export {
     Root,
     Home as Index,
     Nav,
-    FeaturedCategories,
     FeaturedCategoriesV1,
     //categoriesLoader,
     Deals,
@@ -46,6 +47,11 @@ export {
     HeroSection,
     ErrorPage,
     ProductDetails,
-    ProductInfoItem, Login
+    ProductInfoItem,
+    Login,
+    Register,
+    Dashboard,
+    Notifications
+
 
 }

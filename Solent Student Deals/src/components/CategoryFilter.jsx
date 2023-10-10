@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 //import axios from 'axios';
 
 // A component that renders a single product category with a link
 const Category = ({ name, url }) => {
     return (
         <div className="flex items-center">
-            <a href={url} className="">
+            <Link to={"deals?category="+ url} className="">
                 {name}
-            </a>
+            </Link>
         </div>
     );
 };
@@ -30,7 +31,7 @@ const CategoryFilter = () => {
 
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-xl font-bold">Location</h1>
+            <h1 className="text-xl font-bold">CATEGORY</h1>
             <div className="flex flex-col gap-2">
                 {categories.map((category) => (
                     <Category key={category.name} name={category.name} url={category.url} />

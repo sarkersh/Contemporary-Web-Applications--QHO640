@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
 import { getDealItemList } from "../deals/data/DealsData.js";
 
 
@@ -27,9 +26,6 @@ export async function dealsLoader() {
 
 export default function DealItemList() {
 
-    //const { products } = useLoaderData();
-
-
 
     //Firebase Stuff
     const [users, setUsers] = useState([]);
@@ -40,7 +36,7 @@ export default function DealItemList() {
     const [newName, setNewName] = useState("");
     const [newAge, setNewAge] = useState(0);
 
-    console.log("44444444ttttttttttttttttt")
+
 
     const getAllUsers = async () => {
         //const userCollectionRef = collection(db, 'students');
@@ -65,20 +61,8 @@ export default function DealItemList() {
     useEffect(() => {
 
         getUsers();
-        //getAllUsers()
-
-
-        //addDoc(usersCollectionRef, { name: "newName" });
-
 
     }, [])
-    console.log("Deals:", users);
-
-
-
-    console.log("LOCATION/////////",pathname)
-
-
 
     return (
         <div className="bg-white">

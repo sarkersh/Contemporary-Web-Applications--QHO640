@@ -1,9 +1,17 @@
 import {CatShoes} from "../../assets/index.js";
 import {StarRating} from "../../components/index.js";
+import Notification from "../../components/Notification.jsx"
 
 
+export default function ProductInfoItem({deal}) {
 
-export default function ProductInfoItem() {
+
+    const dealPrice = parseFloat(deal.salePrice)
+    const originalPrice = parseFloat(deal.price)
+
+    const discount = originalPrice - dealPrice
+    const percentDiscount = (discount / originalPrice) * 100
+
     return (
         <div className="w-full px-4">
 
@@ -13,28 +21,29 @@ export default function ProductInfoItem() {
 
                 <div className={"w-full flex flex-col items-center justify-center mb-10"}>
 
-                    <h1 className={"text-3xl font-bold text-gray-800"}>Product Name</h1>
-                    <p className={"text-coolGray-300 text-left text-sm"}>SALE 20% Off</p>
+                    <h1 className={"text-3xl font-bold text-gray-800"}>{deal.productName}</h1>
+                    <p className={"text-coolGray-300 text-left text-sm"}>SALE {percentDiscount.toFixed(2)}% Off</p>
                 </div>
 
                 <div className="inline-flex mb-6 mx-auto items-center justify-center text-white bg-green-500 rounded-lg">
 
-                    <img className="h-36 mx-auto" src={CatShoes} alt=""  />
+                    <img className="h-36 mx-auto" src={deal.imageSrc} alt=""  />
 
                 </div>
 
                 <div className="w-full flex flex-wrap">
-                    <div className={"w-full"}>
+                    <div className={"w-full text-right"}>
 
-                        <p className="text-coolGray-500 text-right text-sm">£2.67</p>
+                        <span className="text-gray-500 line-through mr-2">£{deal.price}</span>
+                        <span className="text-coolGray-500 text-right text-gray-800 font-bold text-sm">£{deal.salePrice}</span>
                     </div>
                 </div>
 
                 <div className="w-full flex flex-wrap">
 
                     <div className={"w-1/2"}>
-                        <p className="text-coolGray-500 text-left font-medium">
-                            Amazon
+                        <p className="text-coolGray-500 text-xl font-medium">
+                            {deal.shop}
                         </p>
                     </div>
                     <div className={"w-1/2 w-1/2 text-right"}>
@@ -42,6 +51,7 @@ export default function ProductInfoItem() {
                     </div>
 
                 </div>
+
 
             </div>
         </div>

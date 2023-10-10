@@ -33,8 +33,6 @@ import ShopFilter from "../components/ShopFilter.jsx";
 
 
 
-
-
 export default function Root() {
 
     const { pathname} = useLocation();

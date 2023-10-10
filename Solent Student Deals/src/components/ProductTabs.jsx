@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {ReviewList} from "./index.js";
+import TabReviewList from "./TabReviewList";
+import TabReviewForm from "./TabReviewForm.jsx";
 
 // A component that renders a tab panel with the content for each tab
 const TabPanel = ({ children, value, index }) => {
@@ -21,7 +23,7 @@ const TabPanel = ({ children, value, index }) => {
 };
 
 // A component that renders a component with three tabs under the product info component
-const ProductTabs = ({ description, attributes }) => {
+const ProductTabs = ({ description, reviews, attributes }) => {
     // A state variable that tracks the current tab index
     const [tabIndex, setTabIndex] = useState(0);
 
@@ -42,16 +44,9 @@ const ProductTabs = ({ description, attributes }) => {
                 {description}
             </TabPanel>
             <TabPanel value={tabIndex} index={1}>
-                <form className="flex flex-col gap-4">
-                    <TextField label="Name" variant="outlined" />
-                    <TextField label="Email" variant="outlined" />
-                    <TextField label="Review" variant="outlined" multiline rows={4} />
-                    <Button variant="contained" color="primary">
-                        Submit
-                    </Button>
-                </form>
 
-                <ReviewList reviews={reviews} />
+                <TabReviewForm />
+                <TabReviewList reviews={reviews} />
 
             </TabPanel>
             <TabPanel value={tabIndex} index={2}>

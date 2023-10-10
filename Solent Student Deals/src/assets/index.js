@@ -31,6 +31,10 @@ import YoutubeLogo from "./youtube.png"
 import LocationIcon from "./location.png"
 import EnvelopeIcon from "./envelope.png"
 import PhoneIcon from "./phone.png"
+import GoogleIcon from "./googleIcon.png"
+import FaceBookIcon from "./facebookIcon.png"
+import DealAmazon from "./dealAmazon.png"
+import DealEbay from "./dealEbay.png"
 
 export{
     Catb,
@@ -58,6 +62,9 @@ export{
     LogoLight,
     RegisterLeft,
     CatSports, EnvelopeIcon, GoogleLogo,
-    YoutubeLogo, FaceBookLogo, LocationIcon, PhoneIcon, TwitterLogo
+    YoutubeLogo, FaceBookLogo,
+    LocationIcon, PhoneIcon,
+    TwitterLogo, GoogleIcon,
+    FaceBookIcon, DealAmazon, DealEbay
 
 }

@@ -15,7 +15,7 @@ export default function Footer() {
     return (
         <>
 
-            <section id="footers" className="py-16 bg-black">
+            <section id="footers" className="py-16 bg-black z-10">
                 <div className="container flex flex-col justify-center items-center mx-auto px-4">
                     <div className="flex flex-wrap  mb-4">
                         <div className="w-full md:w-1/2 px-5 mb-12 lg:mb-0">

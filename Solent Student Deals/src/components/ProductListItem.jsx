@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import StarIcon from '@mui/icons-material/Star';
-//import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Typography from '@mui/material/Typography';
 import {GetDealButton} from './index.js';
 
 // A component that renders a product image in the left column
 const ProductImage = ({ src, alt }) => {
     return (
-        <div className="w-1/3 p-2">
-            <img src={src} alt={alt} className="w-full h-full object-cover" />
+        <div className="w-1/5 p-2 mr-4">
+            <img src={src} alt={alt} className=" object-cover" />
         </div>
     );
 };
@@ -90,7 +88,7 @@ const ProductButton = ({ url }) => {
 
 // A component that renders a product list item with all the subcomponents
 const ProductListItem = ({
-    id,
+     id,
      imageSrc,
      imageAlt,
      reviewScore,

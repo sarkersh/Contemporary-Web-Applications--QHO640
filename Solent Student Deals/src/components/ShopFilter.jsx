@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 // A component that renders a single shop with a checkbox and a number
-const Shop = ({ name, deals, checked, onChange }) => {
+const Shop = ({ name, deals, checked, onChange, onClick }) => {
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -11,20 +12,25 @@ const Shop = ({ name, deals, checked, onChange }) => {
                     name={name}
                     checked={checked}
                     onChange={onChange}
+                    onClick={onClick}
                 />
                 <label htmlFor={name} className="ml-2">
                     {name}
                 </label>
             </div>
-            <span className="text-gray-500">{deals}</span>
+            {/*<span className="text-gray-500">{deals}</span>*/}
         </div>
     );
 };
 
 // A component that renders a list of shops with checkboxes and a search box
 const ShopFilter = () => {
+
+    const navigate = useNavigate();
+
     // An array of ten shops with their names and number of deals
     const shops = [
+        { name: 'Local Shop', deals: 120 },
         { name: 'Amazon', deals: 120 },
         { name: 'Walmart', deals: 80 },
         { name: 'Target', deals: 60 },
@@ -35,6 +41,7 @@ const ShopFilter = () => {
         { name: 'Macys', deals: 20 },
         { name: 'Sears', deals: 15 },
         { name: 'JCPenney', deals: 10 },
+
     ];
 
     // A state variable that tracks the checked status of each shop
@@ -52,7 +59,17 @@ const ShopFilter = () => {
         const { name, checked } = event.target;
 
         // Update the state with the new checked value for the corresponding shop
-        setChecked((prev) => ({ ...prev, [name]: checked }));
+        setChecked((prev) => ({ [name]: checked }));
+    };
+
+    const handleClick = (event) => {
+
+        // Get the name and checked value of the target element
+        const { name, checked } = event.target;
+        const path = `/deals?shop=${name}`;
+
+        // Navigate to the /deals route with the query string
+        navigate(path );
     };
 
     // A function that handles the input event of the search box
@@ -75,11 +92,11 @@ const ShopFilter = () => {
 
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-xl font-bold">Shops</h1>
+            <h1 className="text-xl font-bold">SHOP</h1>
             <input
                 type="text"
                 className="w-full border p-2 my-2"
-                placeholder="Search for a shop"
+                placeholder="Search by shop"
                 value={query}
                 onInput={handleInput}
             />
@@ -91,6 +108,7 @@ const ShopFilter = () => {
                         deals={shop.deals}
                         checked={checked[shop.name]}
                         onChange={handleChange}
+                        onClick={handleClick}
                     />
                 ))}
             </div>
