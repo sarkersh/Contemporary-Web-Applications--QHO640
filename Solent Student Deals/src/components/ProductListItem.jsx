@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import {GetDealButton} from './index.js';
+import {Link} from "react-router-dom"
 
 // A component that renders a product image in the left column
-const ProductImage = ({ src, alt }) => {
+const ProductImage = ({ src, alt, id }) => {
     return (
-        <div className="w-1/5 p-2 mr-4">
-            <img src={src} alt={alt} className=" object-cover" />
-        </div>
+
+            <div className="w-1/5 p-2 mr-4">
+                <Link to={'/deal/' + id} >
+                    <img src={src} alt={alt} className=" object-cover" />
+                </Link>
+            </div>
+
     );
 };
 
@@ -17,11 +22,11 @@ const ProductReview = ({ score }) => {
     const renderStars = () => {
         // An array of five colors, either gray or yellow depending on the score
         const colors = [
-            score >= 1 ? 'orange' : 'gray',
-            score >= 2 ? 'orange' : 'gray',
-            score >= 3 ? 'orange' : 'gray',
-            score >= 4 ? 'orange' : 'gray',
-            score >= 5 ? 'orange' : 'gray',
+            score >= 1 ? '#FFD06A' : 'gray',
+            score >= 2 ? '#FFD06A' : 'gray',
+            score >= 3 ? '#FFD06A' : 'gray',
+            score >= 4 ? '#FFD06A' : 'gray',
+            score >= 5 ? '#FFD06A' : 'gray',
         ];
 
         // Return an array of star icons with the corresponding colors
@@ -103,7 +108,7 @@ const ProductListItem = ({
     return (
         <div className="flex border p-4">
 
-            <ProductImage src={imageSrc} alt={imageAlt} />
+            <ProductImage src={imageSrc} alt={imageAlt} id={id}/>
             <div className="w-2/3 p-2 flex flex-col gap-4">
                 <ProductReview score={reviewScore} />
                 <ProductName name={productName} id={id}/>

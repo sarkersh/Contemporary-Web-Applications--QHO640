@@ -1,11 +1,8 @@
 import LogoLight from "../assets/logo-light.png";
 import {
-   EnvelopeIcon,
    GoogleLogo,
    YoutubeLogo,
    FaceBookLogo,
-   LocationIcon,
-   PhoneIcon,
    TwitterLogo
 } from "../assets/index.js";
 
@@ -23,9 +20,9 @@ export default function Footer() {
                                 <img className="h-12" src={LogoLight} alt="" width="auto" />
                             </a>
                             <p className="mb-6 max-w-sm text-base text-gray-500" data-config-id="desc">
-                                Vestibulum varius, velit sit amet tempor efficitur,
-                                lacinia libero, vehicula dui nisi eget purus. Nunc
-                                rutrum sed purus eget sagittis. In eleifend</p>
+                                The Power of Student Savings: Navigating Solent Life with Discounts.
+                                Connecting Students to Savings:
+                            </p>
                             <div>
                                 <a className="inline-flex items-center w-12 h-12 mr-4" href="#">
                                     <img src={FaceBookLogo} alt="" className="h-6" />
@@ -66,14 +63,10 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <p class="text-center text-sm text-gray-500 pt-8 px-4" data-config-id="copy">StudentDeals  ©Copyright 2023.All rights  reserved</p>
+                    <p class="text-center text-sm text-gray-500 pt-8 px-4" data-config-id="copy">Solent Student Deals  ©Copyright 2023.All rights  reserved</p>
                 </div>
             </section>
 
-
-
         </>
-
-
     )
 }

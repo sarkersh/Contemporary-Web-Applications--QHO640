@@ -1,6 +1,4 @@
-import {CatShoes} from "../../assets/index.js";
-import {StarRating} from "../../components/index.js";
-import Notification from "../../components/Notification.jsx"
+import {Link} from "react-router-dom"
 
 
 export default function ProductInfoItem({deal}) {
@@ -21,13 +19,17 @@ export default function ProductInfoItem({deal}) {
 
                 <div className={"w-full flex flex-col items-center justify-center mb-10"}>
 
-                    <h1 className={"text-3xl font-bold text-gray-800"}>{deal.productName}</h1>
+                    <Link to={'deal/' + deal.id} >
+                        <h2 className={"text-2xl font-bold text-gray-800"}>{deal.productName}</h2>
+                    </Link>
+
                     <p className={"text-coolGray-300 text-left text-sm"}>SALE {percentDiscount.toFixed(2)}% Off</p>
                 </div>
 
                 <div className="inline-flex mb-6 mx-auto items-center justify-center text-white bg-green-500 rounded-lg">
-
-                    <img className="h-36 mx-auto" src={deal.imageSrc} alt=""  />
+                    <Link to={'deal/' + deal.id} >
+                        <img className="h-36 mx-auto" src={deal.imageSrc} alt=""  />
+                    </Link>
 
                 </div>
 
@@ -47,7 +49,11 @@ export default function ProductInfoItem({deal}) {
                         </p>
                     </div>
                     <div className={"w-1/2 w-1/2 text-right"}>
-                        <button className="py-1  px-4 text-sm text-white rounded-xl bg-gradient-to-r from-[var(--color-purple)] to-[var(--color-blue)]">Button</button>
+                        <Link to={ deal.dealUrl} >
+                            <button className="py-1  px-4 text-sm text-white rounded-xl bg-gradient-to-r from-[var(--color-purple)] to-[var(--color-blue)]">
+                                Button
+                            </button>
+                        </Link>
                     </div>
 
                 </div>

@@ -5,10 +5,6 @@ import ReactDOM from 'react-dom/client'
 import {
     createBrowserRouter,
     RouterProvider,
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link
 
 } from "react-router-dom"
 
@@ -35,8 +31,6 @@ const router = createBrowserRouter([
         path: "/",
         element: <Root />,
         errorElement: <ErrorPage />,
-        //loader: rootLoader,
-        //action: rootAction,
         children: [
             {
                 path: "/",

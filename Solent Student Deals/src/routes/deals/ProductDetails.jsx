@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {ProductInfo, ProductTabs, ReviewList} from "../../components/index.js"
+import {ProductInfo, ProductTabs} from "../../components/index.js"
 
 import { useParams, useSearchParams } from "react-router-dom";
 
@@ -7,9 +7,7 @@ import { db } from "../../firebase-config";
 import {
     collection,
     getDocs,
-    addDoc,
-    updateDoc,
-    deleteDoc,
+
     doc,
     getDoc
 } from "firebase/firestore";

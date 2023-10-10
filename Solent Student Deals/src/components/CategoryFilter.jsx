@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-//import axios from 'axios';
+
 
 // A component that renders a single product category with a link
 const Category = ({ name, url }) => {

@@ -1,37 +1,4 @@
 
-import { BiBellOff, BiStar, BiSolidStarHalf, BiSolidStar  } from 'react-icons/bi';
-
-
-
-// A component that renders a star rating based on the stars prop
-const StarRating2 = ({ stars }) => {
-    // An array of three colors, either gray, yellow, or orange depending on the stars prop
-    const colors = [
-        stars >= 1 ? 'orange' : 'gray',
-        stars >= 2 ? 'orange' : stars >= 1.5 ? 'orange' : 'gray',
-        stars >= 3 ? 'orange' : stars >= 2.5 ? 'orange' : 'gray',
-        stars >= 4 ? 'orange' : stars >= 3.5 ? 'orange' : 'gray',
-        stars >= 5 ? 'orange' : stars >= 4.5 ? 'orange' : 'gray',
-    ];
-
-    return (
-        <div className="flex justify-center">
-            {colors.map((color, index) => (
-                // Use a ternary operator to render either a full star or a half star
-                color === 'orange' ? (
-                    <BiSolidStarHalf key={index} style={{ color }} className="text-2xl " />
-                ) : (
-                    <BiSolidStar key={index} style={{ color }} className="text-2xl" />
-                )
-            ))}
-        </div>
-    );
-};
-
-
-
-
-
 // A function that returns a star icon with a given color
 const StarIcon = ({ color }) => (
     <svg
@@ -54,11 +21,11 @@ const StarIcon = ({ color }) => (
 const StarRating = ({ stars }) => {
     // An array of five colors, either gray or yellow depending on the stars prop
     const colors = [
-        stars >= 1 ? 'yellow' : 'gray',
-        stars >= 2 ? 'yellow' : 'gray',
-        stars >= 3 ? 'yellow' : 'gray',
-        stars >= 4 ? 'yellow' : 'gray',
-        stars >= 5 ? 'yellow' : 'gray',
+        stars >= 1 ? '#FFD06A' : 'gray',
+        stars >= 2 ? '#FFD06A' : 'gray',
+        stars >= 3 ? '#FFD06A' : 'gray',
+        stars >= 4 ? '#FFD06A' : 'gray',
+        stars >= 5 ? '#FFD06A' : 'gray',
     ];
 
     return (

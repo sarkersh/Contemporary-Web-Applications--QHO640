@@ -7,19 +7,11 @@ import {
     FeaturedCategoriesV1,
     DealGrid
 } from "../index.jsx";
-import { useParams, useSearchParams } from "react-router-dom";
 
 import { db } from "../../firebase-config";
 import {
     collection,
     getDocs,
-    addDoc,
-    updateDoc,
-    deleteDoc,
-    doc,
-    getFirestore,
-    query,
-    where
 } from "firebase/firestore";
 
 
@@ -28,8 +20,6 @@ export default function Home() {
     //Firebase Stuff
     const [deals, setDeals] = useState([]);
     const dealsCollectionRef = collection(db, "deals");
-
-
 
 
     const getAllDeals = async () => {
@@ -44,16 +34,10 @@ export default function Home() {
 
     useEffect(() => {
 
-        console.log('DealOfDay 7777777777' )
-
-
-
        getAllDeals();
 
     }, []);
 
-
-    //console.log('DealOfDay 111111   ', deals[0])
 
     return (
         <>

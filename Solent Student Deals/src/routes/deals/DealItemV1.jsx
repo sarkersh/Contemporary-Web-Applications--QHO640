@@ -1,4 +1,4 @@
-import {CatShoes, DealAmazon, DealEbay} from "../../assets/index.js";
+
 import {StarRating} from "../../components/index.js";
 import {Link} from "react-router-dom";
 
@@ -30,10 +30,18 @@ export default function DealItemV1(deal) {
                 </div>
                 <div className="inline-flex mb- mx-auto items-center justify-center text-white bg-green-500 rounded-lg">
 
-                    <img className="h-36 mx-auto object-fit-cover w-full" src={deal.imageSrc} alt=""  />
+                    <Link to={'deal/' + deal.id} >
+                        <img className="h-36 mx-auto object-fit-cover w-full" src={deal.imageSrc} alt=""  />
+                    </Link>
 
                 </div>
-                <h3 className="mb-4 text-l text-left leading-tight font-bold" >{deal.productName}</h3>
+
+                <Link to={'deal/' + deal.id} >
+                    <h3 className="mb-4 text-l text-left leading-tight font-bold" >
+                            {deal.productName}
+                    </h3>
+                </Link>
+
                 <p className="text-coolGray-500 text-left font-medium">£{deal.salePrice} </p>
 
                 <div className="w-full flex flex-wrap">

@@ -49,7 +49,6 @@ function RegisterCard() {
             // get the user object from the user credential
             const user = userCredential.user;
 
-
             // update the user's display name with the name input
             /*await user.updateProfile({
                 displayName: name,
@@ -59,7 +58,6 @@ function RegisterCard() {
             await updateProfile(user, {
                 displayName: name,
             });
-
 
             // clear the error message
             setError('');
@@ -77,6 +75,33 @@ function RegisterCard() {
             setError(errorMessage);
         }
     };
+
+    // handle the click of the Google login button
+    const handleGoogleLogin = async () => {
+        // get the auth instance from firebase app
+        //const auth = getAuth(app);
+        // create a Google provider object
+        const provider = new GoogleAuthProvider();
+        try {
+            // sign in with popup using firebase auth and Google provider
+            const userCredential = await signInWithPopup(auth, provider);
+            // get the user object from the user credential
+            const user = userCredential.user;
+            // clear the error message
+            setError('');
+
+            // redirect to the user account page using navigate
+            navigate('/dashboard');
+
+        } catch (error) {
+            // get the error code and message from the error object
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // set the error message state with the error message
+            setError(errorMessage);
+        }
+    };
+
 
     return (
         <section className=" bg-gray-100">
@@ -141,8 +166,11 @@ function RegisterCard() {
 
                                 <div className={" py-4"}> ----------------------- Or Sign-Up With -----------------------</div>
                                 <div className="flex space-x-4 justify-center items-center">
-                                    <img className={"object-cover image-center w-4"} src={GoogleIcon} alt=""/>
-                                    <img className={"object-cover image-center w-4"} src={FaceBookIcon} alt=""/>
+                                    <img className={"object-cover cursor-pointer image-center w-5 poiner "}
+                                         src={GoogleIcon} alt=""
+                                         onClick={handleGoogleLogin}
+                                    />
+                                    <img className={"object-cover image-center w-5"} src={FaceBookIcon} alt=""/>
                                 </div>
                             </div>
 

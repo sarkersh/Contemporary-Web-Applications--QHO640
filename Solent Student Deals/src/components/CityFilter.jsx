@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 // A component that renders a single city with a checkbox
 const City = ({ name, checked, onChange, onClick }) => {

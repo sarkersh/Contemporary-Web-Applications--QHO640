@@ -6,10 +6,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon,  } from '@heroicons/react/24/outline'
 import {LogoDark, SearchButton, User, WishList} from "../assets/index.js"
 
-import { Menu as NavMenu, Input, Select, Image } from 'antd';
-import { EnvironmentOutlined, SearchOutlined } from '@ant-design/icons';
-
-
 //Firebase Auth
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import {auth} from "../firebase-config";
@@ -103,25 +99,6 @@ export default function Nav() {
         'Liverpool',
         'Peterborough'
     ];
-    //===================================================
-
-
-
-    // listen to the auth state change event
-    onAuthStateChanged(auth, (user) => {
-        // check if user is logged in
-        if (user) {
-            // user is logged in, console log the message
-            console.log('user is logged in');
-            console.log(user.providerData[0]);
-            setLoginStatus(user.providerData[0].providerId);
-
-
-        } else {
-            // user is not logged in, console log the message
-            console.log('user not logged in');
-        }
-    });
 
 
 
@@ -143,19 +120,26 @@ export default function Nav() {
         }
     };
 
-    // Define a function that validates the location
-    const validateLocation = () => {
 
-        if (location !== '') {
-
-            // Set the state of focused to true
-            setFocused(false);
-        }
-    };
     useEffect(() => {
-        validateLocation();
-    }, [location]); // Pass location as a dependency
 
+        // listen to the auth state change event
+        onAuthStateChanged(auth, (user) => {
+            // check if user is logged in
+            if (user) {
+                // user is logged in, console log the message
+                console.log('user is logged in');
+                console.log(user.providerData[0]);
+                setLoginStatus(user.providerData[0].providerId);
+
+            } else {
+                // user is not logged in, console log the message
+                console.log('user not logged in');
+            }
+        });
+
+
+    }, [loginStatus]); // Pass location as a dependency
 
     return (
 
@@ -201,10 +185,10 @@ export default function Nav() {
                                                        value={location}
                                                        onChange={handleLocationChange}
                                                        onClick={handleLocationChange}
-                                                       onFocus={handleFocus} // Attach the handleFocus function to the onFocus event
+                                                       //onFocus={handleFocus} // Attach the handleFocus function to the onFocus event
                                                        // onBlur={handleBlur} // Attach the handleBlur function to the onBlur event
                                                 />
-                                                {(focused) && (
+                                                {(location) && (
                                                     <div className="dropdown absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10">
                                                         {cities.map((city) => (
                                                             <div
@@ -217,7 +201,7 @@ export default function Nav() {
                                                                     // Navigate to the /deals route with the query string
                                                                     navigate('/deals' + queryString);
 
-                                                                    setLocation(city)
+                                                                    setLocation("")
                                                                 }}
                                                             >
                                                                 {city}
@@ -299,7 +283,7 @@ export default function Nav() {
                                                     className="relative rounded-full bg-gray-20 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-20"
                                                 >
                                                     <span className="absolute -inset-1.5" />
-                                                    <span className="sr-only">View notifications</span>
+                                                    <span className="sr-only"></span>
                                                     {/*<UserIcon className="h-6 w-6" aria-hidden="true" />*/}
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
@@ -365,7 +349,3 @@ export default function Nav() {
 
     )
 }
-
-
-
-//export default NavBar;

@@ -22,11 +22,11 @@ const TabReviewList = ({reviews}) => {
                     // Show reviews
                     reviews.map((review, index) => (
                         <div key={index} className="review bg-white p-4 rounded-md shadow-sm flex items-center space-x-4">
-                            <div className="text-3xl rounded-3xl bg-gray-300 p-4">
-                                M
+                            <div className="text-xl rounded-3xl bg-gray-200 p-2">
+                                {review.name.charAt(0).toUpperCase()}
                             </div>
                             <div className="text flex-1">
-                                <h2 className={"text-l"}>Hello</h2>
+                                <h2 className={"text-l"}>{review.name}</h2>
                                 <div className="rating text-yellow-400">
                                     {[1, 2, 3, 4, 5].map((value) => (
                                         <span key={value}>

@@ -1,18 +1,15 @@
 
 import React, { useEffect, useState } from "react";
-import { getDealOfDay } from "../deals/data/DealsData.js";
+
 import { BgDealOfDay, HomeBottom2, HomeBottom1 } from "../../assets/index.js";
 const bgImage = BgDealOfDay; // assign it to a variable
 import {CountdownTimer} from "../../components/index.js"
 import ProductInfoItem from "./ProductInfoItem.jsx";
-import {DealGrid, FeaturedCategoriesV1, HeroSection, HomeBottom} from "../index.jsx";
-import {db} from "../../firebase-config.js";
 
 
 const futureDate = '2023-12-31T23:59:59'; // Replace with your desired future date
 
 export default function DealOfDay(props) {
-
 
     const [deals, setDeals] = useState([]);
 
