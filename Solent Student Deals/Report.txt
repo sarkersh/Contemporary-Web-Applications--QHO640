@@ -1,5 +1,13 @@
 ### Report
 
+Author: 10152420
+
+Assessment Title: Implementation and Report
+
+Module Title: Contemporary Web Applications
+
+Git Repo: https://github.com/sarkersh/Contemporary-Web-Applications--QHO640
+
 App Link: https://solentstudentdeals-bab4d.web.app
 
 ## 1. Introduction
