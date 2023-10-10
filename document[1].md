@@ -1,7 +1,3 @@
-![image-20231010233421113](C:\Users\shaki\AppData\Roaming\Typora\typora-user-images\image-20231010233421113.png)
-
-![Text Box: BSc (Hons) Computing Computing ](file:///C:/Users/shaki/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png)
-
 Project Title     : Implementation and Report
 
 Module Title    : Contemporary Web Applications
@@ -409,6 +405,7 @@ To install and run the Student Discounts and Deals Web App locally for developme
 
 Open your terminal and run the following command to clone the project repository from GitHub:
 
+
 `git clone https://github.com/sarkersh/Contemporary-Web-Applications--QHO640`
 
 **Step 2: Navigate to the Project Directory**
@@ -422,6 +419,7 @@ Change your current directory to the project folder:
 **Step 3: Install Dependencies**
 
 Use npm to install the project dependencies:
+
 
 `npm install`
 
