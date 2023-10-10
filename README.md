@@ -32,7 +32,7 @@ Change your current directory to the project folder:
 
 
 
-`cd student-discounts-web-app`
+`cd Contemporary-Web-Applications--QHO640`
 
 **Step 3: Install Dependencies**
 
